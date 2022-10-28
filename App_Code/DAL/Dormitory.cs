@@ -10,14 +10,14 @@ namespace DormityCFU.App_Code.DAL
     {
         public int RowNumb { get; set; }
         public int IdDormitory { get; set; }
-        public string PhoneNumb { get; set; }
+        public string PhoneNumbD { get; set; }
         public string Adress { get; set; }
         public int NumbOfRooms { get; set; }
         public Dormitory()
         {
             RowNumb = 0;
             IdDormitory = 0;
-            PhoneNumb = string.Empty;
+            PhoneNumbD = string.Empty;
             Adress = string.Empty;
             NumbOfRooms = 0;
         }
@@ -25,7 +25,7 @@ namespace DormityCFU.App_Code.DAL
         {
             Dormitory result = new Dormitory();
             result.IdDormitory = (int)dataRow["IdDormitory"];
-            result.PhoneNumb = dataRow["PhoneNumb"].ToString();
+            result.PhoneNumbD = dataRow["PhoneNumbD"].ToString();
             result.Adress = dataRow["Adress"].ToString();
             result.NumbOfRooms = (int)dataRow["NumbOfRooms"];
             return result;
