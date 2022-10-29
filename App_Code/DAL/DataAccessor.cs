@@ -39,9 +39,9 @@ namespace DormityCFU.App_Code.DAL
                 Conn.Open();
                 try
                 {
-                    cmd.CommandText = "Select [Student].[IdStudent], [Student].* FROM [Student] WHERE [Student].[IdStudent]=?";
+                    cmd.CommandText = "SELECT Student.*, Room.NumbRoom, Dormitory.IdDormitory, Directions.Direction, Groups.Course FROM Directions INNER JOIN(Groups INNER JOIN (Dormitory INNER JOIN (Room INNER JOIN Student ON Room.IdRoom = Student.IdRoom) ON Dormitory.IdDormitory = Room.IdDormitory) ON Groups.IdGroup = Student.IdGroup) ON Directions.IdDirection = Groups.IdDirection WHERE IdStudent";
                     cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("[IdStudent]", id);
+                    cmd.Parameters.AddWithValue("[Student] [IdStudent]", id);
                     dataAdapter = new OdbcDataAdapter(cmd);
                     dataAdapter.Fill(dataTable);
                     dataAdapter.Dispose();
@@ -70,7 +70,7 @@ namespace DormityCFU.App_Code.DAL
                 Conn.Open();
                 try
                 {
-                    cmd.CommandText = "SELECT Student.* FROM Student";
+                    cmd.CommandText = "SELECT Student.*, Room.NumbRoom, Dormitory.IdDormitory, Directions.Direction, Groups.Course FROM Directions INNER JOIN(Groups INNER JOIN (Dormitory INNER JOIN (Room INNER JOIN Student ON Room.IdRoom = Student.IdRoom) ON Dormitory.IdDormitory = Room.IdDormitory) ON Groups.IdGroup = Student.IdGroup) ON Directions.IdDirection = Groups.IdDirection";
                     dataAdapter = new OdbcDataAdapter(cmd);
                     dataAdapter.Fill(dataTable);
                     dataAdapter.Dispose();
