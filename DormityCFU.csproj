@@ -126,6 +126,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Pages\Students\AddStudent.aspx" />
+    <Content Include="Pages\Students\EditStudent.aspx" />
     <Content Include="Pages\Students\ListStudent.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -194,6 +196,20 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Students\AddStudent.aspx.cs">
+      <DependentUpon>AddStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Students\AddStudent.aspx.designer.cs">
+      <DependentUpon>AddStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Students\EditStudent.aspx.cs">
+      <DependentUpon>EditStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Students\EditStudent.aspx.designer.cs">
+      <DependentUpon>EditStudent.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Students\ListStudent.aspx.cs">
       <DependentUpon>ListStudent.aspx</DependentUpon>

@@ -99,7 +99,7 @@ namespace DormityCFU.App_Code.DAL
                 conn.Open();
                 try
                 {
-                    cmd.CommandText = "DELETE FROM [Student] WHERE [IdStudent]";
+                    cmd.CommandText = "DELETE FROM [Student] WHERE [IdStudent]=?";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("[IdStudent]", id);
                     cmd.ExecuteNonQuery();
@@ -121,15 +121,17 @@ namespace DormityCFU.App_Code.DAL
                 conn.Open();
                 try
                 {
-                    cmd.CommandText = "UPDATE [Student] SET [SecondName]=?, [FirstName]=?, [Surname]=?, [DateOfRegistr]=?, [DateOfBirth]=?, [PhoneNumb]=?, [HAdderss]=?, WHERE [IdStudent]=?";
+                    cmd.CommandText = "UPDATE [Student] SET [SecondName]=?, [FirstName]=?, [Surname]=?, [DateOfRegistr]=?, [DateOfBirth]=?, [Direction]=?, [Course]=?, [IdDormitory]=?, [NumbRoom]=?, WHERE [IdStudent]=?";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("[SecondName]", entity.SecondName);
                     cmd.Parameters.AddWithValue("[FirstName]", entity.FirstName);
                     cmd.Parameters.AddWithValue("[Surname]", entity.Surname);
                     cmd.Parameters.AddWithValue("[DateOfRegistr]", entity.DateOfRegistr);
                     cmd.Parameters.AddWithValue("[DateOfBirth]", entity.DateOfBirth);
-                    cmd.Parameters.AddWithValue("[PhoneNumb]", entity.PhoneNumb);
-                    cmd.Parameters.AddWithValue("[HAdderss]", entity.HAdderss);
+                    cmd.Parameters.AddWithValue("[Direction]", entity.Direction);
+                    cmd.Parameters.AddWithValue("[Course]", entity.Course);
+                    cmd.Parameters.AddWithValue("[IdDormitory]", entity.IdDormitory);
+                    cmd.Parameters.AddWithValue("[NumbRoom]", entity.NumbRoom);
                     cmd.Parameters.AddWithValue("[IdStudent]", entity.IdStudent);
                     cmd.ExecuteNonQuery();
                 }
@@ -151,15 +153,18 @@ namespace DormityCFU.App_Code.DAL
                 conn.Open();
                 try
                 {
-                    cmd.CommandText = "INSERT INTO [Student] ([SecondName], [FirstName], [Surname], [DateOfRegistr], [DateOfBirth], [PhoneNumb], [HAdderss])" + "VALUES (?,?,?,?,?,?,?)";
+                    cmd.CommandText = "INSERT INTO [Student] ([SecondName], [FirstName], [Surname], [DateOfRegistr], [DateOfBirth], [Direction], [IdGroup], [Course], [IdDormitory], [NumbRoom])" + "VALUES (?,?,?,?,?,?,?,?,?,?)";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("[SecondName]", entity.SecondName);
                     cmd.Parameters.AddWithValue("[FirstName]", entity.FirstName);
                     cmd.Parameters.AddWithValue("[Surname]", entity.Surname);
                     cmd.Parameters.AddWithValue("[DateOfRegistr]", entity.DateOfRegistr);
                     cmd.Parameters.AddWithValue("[DateOfBirth]", entity.DateOfBirth);
-                    cmd.Parameters.AddWithValue("[PhoneNumb]", entity.PhoneNumb);
-                    cmd.Parameters.AddWithValue("[HAdderss]", entity.HAdderss);
+                    cmd.Parameters.AddWithValue("[Direction]", entity.Direction);
+                    cmd.Parameters.AddWithValue("[IdGroup]", entity.IdGroup);
+                    cmd.Parameters.AddWithValue("[Course]", entity.Course);
+                    cmd.Parameters.AddWithValue("[IdDormitory]", entity.IdDormitory);
+                    cmd.Parameters.AddWithValue("[NumbRoom]", entity.NumbRoom);
                     cmd.ExecuteNonQuery();
                     cmd.CommandText = "SELECT @@IDENTITY";
                     object o = cmd.ExecuteScalar();
@@ -251,7 +256,7 @@ namespace DormityCFU.App_Code.DAL
                 conn.Open();
                 try
                 {
-                    cmd.CommandText = "DELETE FROM [Room] WHERE [IdRoom]";
+                    cmd.CommandText = "DELETE FROM [Room] WHERE [IdRoom]=?";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("[IdRoom]", id);
                     cmd.ExecuteNonQuery();
@@ -399,7 +404,7 @@ namespace DormityCFU.App_Code.DAL
                 conn.Open();
                 try
                 {
-                    cmd.CommandText = "DELETE FROM [Groups] WHERE [IdGroup]";
+                    cmd.CommandText = "DELETE FROM [Groups] WHERE [IdGroup]=?";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("[IdGroup]", id);
                     cmd.ExecuteNonQuery();
@@ -543,7 +548,7 @@ namespace DormityCFU.App_Code.DAL
                 conn.Open();
                 try
                 {
-                    cmd.CommandText = "DELETE FROM [Dormitory] WHERE [IdDormitory]";
+                    cmd.CommandText = "DELETE FROM [Dormitory] WHERE [IdDormitory]=?";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("[IdDormitory]", id);
                     cmd.ExecuteNonQuery();
@@ -687,7 +692,7 @@ namespace DormityCFU.App_Code.DAL
                 conn.Open();
                 try
                 {
-                    cmd.CommandText = "DELETE FROM [Directions] WHERE [Directions]";
+                    cmd.CommandText = "DELETE FROM [Directions] WHERE [Directions]=?";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("[IdDirection]", id);
                     cmd.ExecuteNonQuery();

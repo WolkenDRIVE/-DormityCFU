@@ -12,6 +12,7 @@ namespace DormityCFU.App_Code.DAL
         public int IdStudent { get; set; }
         public int IdGroup { get; set; }
         public int IdRoom { get; set; }
+        public int IdDirection { get; set; }
         public string SecondName { get; set; }
         public string FirstName { get; set; }
         public string Surname { get; set; }
@@ -20,6 +21,10 @@ namespace DormityCFU.App_Code.DAL
         public DateTime? DateOfBirth { get; set; }
         public string PhoneNumb { get; set; }
         public string HAdderss { get; set; }
+        public string Direction { get; set; }
+        public int Course { get; set; }
+        public int IdDormitory { get; set; }
+        public int NumbRoom { get; set; }
         public Student()
         {
             RowNumb = 0;
@@ -34,6 +39,11 @@ namespace DormityCFU.App_Code.DAL
             DateOfBirth = null;
             PhoneNumb = string.Empty;
             HAdderss = string.Empty;
+            NumbRoom = 0;
+            Direction = string.Empty;
+            IdDormitory = 0;
+            Course = 0;
+            IdDirection = 0;
         }
         public static Student Map(DataRow dataRow)
         {
@@ -49,6 +59,11 @@ namespace DormityCFU.App_Code.DAL
             result.DateOfBirth = dataRow["DateOfBirth"] != DBNull.Value ? (DateTime?)dataRow["DateOfBirth"] : null;
             result.PhoneNumb = dataRow["PhoneNumb"].ToString();
             result.HAdderss = dataRow["HAdderss"].ToString();
+            result.Course = (int)dataRow["Course"];
+            result.IdDormitory = (int)dataRow["IdDormitory"];
+            result.Direction = dataRow["Direction"].ToString();
+            result.NumbRoom = (int)dataRow["NumbRoom"];
+            //result.IdDirection = (int)dataRow["IdDirection"];
             return result;
         }
 

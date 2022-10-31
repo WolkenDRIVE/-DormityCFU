@@ -1,11 +1,17 @@
 ﻿<%@ Page Title="Информация о заселенных студентах" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ListStudent.aspx.cs" Inherits="DormityCFU.Pages.Students.ListStudent" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:GridView ID="GridViewStudent" runat="server" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None">
+    <h1 style="color: #000000"><%: Title %></h1>
+    <p style="color: #000000">На данной странице вы можете узнать информацию о заселенных студентах.</p>
+    <br />
+    <asp:Button ID="ButtonAdd" runat="server" Text="Добавить данные" Style="color: #000000" PostBackUrl="~/Pages/Students/AddStudent.aspx" />
+    <br />
+    <br />
+    <asp:GridView ID="GridViewStudent" runat="server" BackColor="LightGoldenrodYellow" OnRowDeleting="GridViewStudent_RowDeleting" OnRowDataBound="GridViewStudent_RowDataBound" OnRowEditing="GridViewStudent_RowEditing" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None">
         <AlternatingRowStyle BackColor="PaleGoldenrod" />
         <Columns>
             <asp:BoundField DataField="IdStudent" HeaderText="Id" SortExpression="IdStudent" />
-            <asp:CommandField HeaderText="Удалить" ShowDeleteButton="True" ShowEditButton="True" ShowHeader="True" />
+            <asp:CommandField HeaderText="Удалить" ShowDeleteButton="True" ShowHeader="True" />
             <asp:CommandField HeaderText="Редактировать" ShowEditButton="True" ShowHeader="True" />
             <asp:BoundField DataField="SecondName" HeaderText="Фамилия Студента " SortExpression="SecondName" />
             <asp:BoundField DataField="FirstName" HeaderText="Имя Студента " SortExpression="FirstName" />
