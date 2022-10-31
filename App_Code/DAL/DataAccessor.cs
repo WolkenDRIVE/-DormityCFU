@@ -41,7 +41,7 @@ namespace DormityCFU.App_Code.DAL
                 {
                     cmd.CommandText = "SELECT Student.*, Room.NumbRoom, Dormitory.IdDormitory, Directions.Direction, Groups.Course FROM Directions INNER JOIN(Groups INNER JOIN (Dormitory INNER JOIN (Room INNER JOIN Student ON Room.IdRoom = Student.IdRoom) ON Dormitory.IdDormitory = Room.IdDormitory) ON Groups.IdGroup = Student.IdGroup) ON Directions.IdDirection = Groups.IdDirection WHERE IdStudent";
                     cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("[Student] [IdStudent]", id);
+                    cmd.Parameters.AddWithValue("[Student] [IdStudent]" , id);
                     dataAdapter = new OdbcDataAdapter(cmd);
                     dataAdapter.Fill(dataTable);
                     dataAdapter.Dispose();

@@ -24,7 +24,7 @@
                 </ItemTemplate>
                 <FooterStyle HorizontalAlign="Center" />
             </asp:TemplateField>
-            <asp:BoundField DataField="IdDormitory" HeaderText="Общежитие " SortExpression="IdDormitory" />
+            <asp:BoundField DataField="IdDormitory" HeaderText="Общежитие" SortExpression="IdDormitory" />
             <asp:BoundField DataField="NumbRoom" HeaderText="Номер комнаты " SortExpression="NumbRoom" />
         </Columns>
         <FooterStyle BackColor="Tan" />
