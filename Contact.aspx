@@ -1,17 +1,23 @@
-﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="DormityCFU.Contact" %>
+﻿<%@ Page Title="Контакты" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="DormityCFU.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
-    <h3>Your contact page.</h3>
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
+    <h2 style="color: #F1F1F2"><%: Title %>.</h2>
+    <h3 style="color: #F1F1F2">Наша страница контактов.</h3>
+    <address style="color: #F1F1F2">
+       Адресс:<br />
+        г. Ялта, ул. Красноармейская, 15а<br />
+        <abbr title="Телефон">Т:</abbr>
+        +7978ХХХХХХХ
+    </address>
+    <address style="color: #F1F1F2">
+       Адресс:<br />
+        г. Ялта, пгт Массандра ул. Стахановская,11<br />
+        <abbr title="Телефон">Т:</abbr>
+        +7978ХХХХХХХ
     </address>
 
     <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        <strong style="color: #F1F1F2">Support:</strong style="color: #8B0000>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+        <strong style="color: #F1F1F2">Marketing:</strong style="color: #8B0000> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
     </address>
 </asp:Content>

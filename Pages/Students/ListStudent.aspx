@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="Информация о заселенных студентах" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ListStudent.aspx.cs" Inherits="DormityCFU.Pages.Students.ListStudent" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1 style="color: #000000"><%: Title %></h1>
-    <p style="color: #000000">На данной странице вы можете узнать информацию о заселенных студентах.</p>
+    <h1 style="color: #F1F1F2"><%: Title %></h1>
+    <p style="color: #F1F1F2">На данной странице вы можете узнать информацию о заселенных студентах.</p>
     <br />
     <asp:Button ID="ButtonAdd" runat="server" Text="Добавить данные" Style="color: #000000" PostBackUrl="~/Pages/Students/AddStudent.aspx" />
     <br />

@@ -126,6 +126,22 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Images\emblem.jpg" />
+    <Content Include="Images\fon.jpg" />
+    <Content Include="Images\fon2.jpg" />
+    <Content Include="Images\fon3.jpg" />
+    <Content Include="Images\fon4.jpg" />
+    <Content Include="Images\fonRoom.jpg" />
+    <Content Include="Images\fonRoom2.jpg" />
+    <Content Include="Images\logotip.png" />
+    <Content Include="Pages\GroupsDate\AddDirection.aspx" />
+    <Content Include="Pages\GroupsDate\AddGroup.aspx" />
+    <Content Include="Pages\GroupsDate\EditDirection.aspx" />
+    <Content Include="Pages\GroupsDate\EditGroup.aspx" />
+    <Content Include="Pages\GroupsDate\ListGroup.aspx" />
+    <Content Include="Pages\RoomDate\AddRoom.aspx" />
+    <Content Include="Pages\RoomDate\EditRoom.aspx" />
+    <Content Include="Pages\RoomDate\ListRoom.aspx" />
     <Content Include="Pages\Students\AddStudent.aspx" />
     <Content Include="Pages\Students\EditStudent.aspx" />
     <Content Include="Pages\Students\ListStudent.aspx" />
@@ -196,6 +212,62 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GroupsDate\AddDirection.aspx.cs">
+      <DependentUpon>AddDirection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\GroupsDate\AddDirection.aspx.designer.cs">
+      <DependentUpon>AddDirection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GroupsDate\AddGroup.aspx.cs">
+      <DependentUpon>AddGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\GroupsDate\AddGroup.aspx.designer.cs">
+      <DependentUpon>AddGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GroupsDate\EditDirection.aspx.cs">
+      <DependentUpon>EditDirection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\GroupsDate\EditDirection.aspx.designer.cs">
+      <DependentUpon>EditDirection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GroupsDate\EditGroup.aspx.cs">
+      <DependentUpon>EditGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\GroupsDate\EditGroup.aspx.designer.cs">
+      <DependentUpon>EditGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GroupsDate\ListGroup.aspx.cs">
+      <DependentUpon>ListGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\GroupsDate\ListGroup.aspx.designer.cs">
+      <DependentUpon>ListGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RoomDate\AddRoom.aspx.cs">
+      <DependentUpon>AddRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RoomDate\AddRoom.aspx.designer.cs">
+      <DependentUpon>AddRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RoomDate\EditRoom.aspx.cs">
+      <DependentUpon>EditRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RoomDate\EditRoom.aspx.designer.cs">
+      <DependentUpon>EditRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RoomDate\ListRoom.aspx.cs">
+      <DependentUpon>ListRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RoomDate\ListRoom.aspx.designer.cs">
+      <DependentUpon>ListRoom.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Students\AddStudent.aspx.cs">
       <DependentUpon>AddStudent.aspx</DependentUpon>

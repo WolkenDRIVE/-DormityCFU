@@ -121,7 +121,7 @@ namespace DormityCFU.App_Code.DAL
                 conn.Open();
                 try
                 {
-                    cmd.CommandText = "UPDATE [Student] SET [SecondName]=?, [FirstName]=?, [Surname]=?, [DateOfRegistr]=?, [DateOfBirth]=?, [Direction]=?, [Course]=?, [IdDormitory]=?, [NumbRoom]=?, WHERE [IdStudent]=?";
+                    cmd.CommandText = "UPDATE [Student] SET [SecondName]=?, [FirstName]=?, [Surname]=?, [DateOfRegistr]=?, [DateOfBirth]=?, [Direction]=?, [Course]=?, [IdDormitory]=?, [NumbRoom]=? WHERE [IdStudent]=?";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("[SecondName]", entity.SecondName);
                     cmd.Parameters.AddWithValue("[FirstName]", entity.FirstName);
@@ -278,7 +278,7 @@ namespace DormityCFU.App_Code.DAL
                 conn.Open();
                 try
                 {
-                    cmd.CommandText = "UPDATE [Room] SET [IdDormitory]=?, [RoomStatusNotation]=?, [NumberOfResidents]=?, [MaxNumberOfResidents]=?, [NumbRoom]=?, WHERE [IdRoom]=?";
+                    cmd.CommandText = "UPDATE [Room] SET [IdDormitory]=?, [RoomStatusNotation]=?, [NumberOfResidents]=?, [MaxNumberOfResidents]=?, [NumbRoom]=? WHERE [IdRoom]=?";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("[IdDormitory]", entity.IdDormitory);
                     cmd.Parameters.AddWithValue("[RoomStatusNotation]", entity.RoomStatusNotation);
@@ -490,7 +490,7 @@ namespace DormityCFU.App_Code.DAL
                 {
                     cmd.CommandText = "Select [Dormitory].[IdDormitory], [Dormitory].* FROM [Dormitory] WHERE [Dormitory].[IdDormitory]=?";
                     cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("[IdDormitory]", id);
+                    cmd.Parameters.AddWithValue("[Dormitory] [IdDormitory]", id);
                     dataAdapter = new OdbcDataAdapter(cmd);
                     dataAdapter.Fill(dataTable);
                     dataAdapter.Dispose();
@@ -632,7 +632,7 @@ namespace DormityCFU.App_Code.DAL
                 Conn.Open();
                 try
                 {
-                    cmd.CommandText = "Select [Directions].[IdDormitory], [Dormitory].* FROM [Dormitory] WHERE [Dormitory].[IdDirection]=?";
+                    cmd.CommandText = "Select [Directions].[IdDirection], [Directions].* FROM [Directions] WHERE [Directions].[IdDirection]=?";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("[IdDirection]", id);
                     dataAdapter = new OdbcDataAdapter(cmd);
@@ -714,7 +714,7 @@ namespace DormityCFU.App_Code.DAL
                 conn.Open();
                 try
                 {
-                    cmd.CommandText = "UPDATE [Directions] SET [Direction]=?, [CodeDirection]=?, WHERE [IdDirection]=?";
+                    cmd.CommandText = "UPDATE [Directions] SET [Direction]=?, [CodeDirection]=? WHERE [IdDirection]=?";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("[Direction]", entity.Direction);
                     cmd.Parameters.AddWithValue("[CodeDirection]", entity.CodeDirection);
