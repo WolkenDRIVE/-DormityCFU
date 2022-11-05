@@ -29,7 +29,7 @@ namespace DormityCFU.Pages.GroupsDate
 
         protected void GridViewDirection_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int id = int.Parse(GridViewDirection.Rows[e.RowIndex].Cells[0].Text);
+            int id = int.Parse(GridViewDirection.Rows[e.RowIndex].Cells[3].Text);
             DataAccessor.DeleteDirections(id);
             BindGrid();
         }
@@ -38,7 +38,7 @@ namespace DormityCFU.Pages.GroupsDate
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                ((LinkButton)e.Row.Cells[1].Controls[0]).OnClientClick = "return confing('Вы уверены что хотите удалить запись?');";// add any JS you want here
+                ((LinkButton)e.Row.Cells[3].Controls[0]).OnClientClick = "return confing('Вы уверены что хотите удалить запись?');";// add any JS you want here
             }
         }
 
@@ -50,7 +50,7 @@ namespace DormityCFU.Pages.GroupsDate
 
         protected void GridViewGroup_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int id = int.Parse(GridViewGroup.Rows[e.RowIndex].Cells[0].Text);
+            int id = int.Parse(GridViewGroup.Rows[e.RowIndex].Cells[3].Text);
             DataAccessor.DeleteGroups(id);
             BindGrid();
         }
@@ -59,7 +59,7 @@ namespace DormityCFU.Pages.GroupsDate
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                ((LinkButton)e.Row.Cells[1].Controls[0]).OnClientClick = "return confing('Вы уверены что хотите удалить запись?');";// add any JS you want here
+                ((LinkButton)e.Row.Cells[3].Controls[0]).OnClientClick = "return confing('Вы уверены что хотите удалить запись?');";// add any JS you want here
             }
         }
 

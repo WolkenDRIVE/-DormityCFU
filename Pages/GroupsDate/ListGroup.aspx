@@ -10,7 +10,9 @@
     <asp:GridView ID="GridViewDirection" runat="server" BackColor="LightGoldenrodYellow" OnRowDeleting="GridViewDirection_RowDeleting" OnRowDataBound="GridViewDirection_RowDataBound" OnRowEditing="GridViewDirection_RowEditing" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None">
         <AlternatingRowStyle BackColor="PaleGoldenrod" />
         <Columns>
-            <asp:BoundField DataField="IdDirection" HeaderText="Id" SortExpression="IdDirection" />
+            <asp:BoundField DataField="IdDirection" ><ControlStyle CssClass="hiddenColumn" /><FooterStyle CssClass="hiddenColumn" /><HeaderStyle CssClass="hiddenColumn" /><ItemStyle CssClass="hiddenColumn" /></asp:BoundField>
+            <%--<asp:BoundField DataField="IdDirection" HeaderText="Id" SortExpression="IdDirection" />--%>
+            <asp:BoundField DataField="RowNumb" HeaderText="№" SortExpression="RowNumb" />
             <asp:CommandField HeaderText="Удалить" ShowDeleteButton="True" ShowHeader="True" />
             <asp:CommandField HeaderText="Редактировать" ShowEditButton="True" ShowHeader="True" />
             <asp:BoundField DataField="Direction" HeaderText="Направление " SortExpression="Direction" />
@@ -25,17 +27,20 @@
         <SortedDescendingCellStyle BackColor="#E1DB9C" />
         <SortedDescendingHeaderStyle BackColor="#C2A47B" />
     </asp:GridView>
-    <p style="color: #F1F1F2">Информация о направлениях.</p> 
+    <br />
+    <p style="color: #F1F1F2">Информация о группах.</p> 
      <asp:Button ID="Button1" runat="server" Text="Добавить данные" Style="color: #000000" PostBackUrl="~/Pages/GroupSDate/AddGroup.aspx" />
     <br />
     <br />
     <asp:GridView ID="GridViewGroup" runat="server" BackColor="LightGoldenrodYellow" OnRowDeleting="GridViewGroup_RowDeleting" OnRowDataBound="GridViewGroup_RowDataBound" OnRowEditing="GridViewGroup_RowEditing" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None">
         <AlternatingRowStyle BackColor="PaleGoldenrod" />
         <Columns>
-            <asp:BoundField DataField="IdGroup" HeaderText="Id" SortExpression="IdGroup" />
+            <asp:BoundField DataField="IdGroup" ><ControlStyle CssClass="hiddenColumn" /><FooterStyle CssClass="hiddenColumn" /><HeaderStyle CssClass="hiddenColumn" /><ItemStyle CssClass="hiddenColumn" /></asp:BoundField>
+            <%--<asp:BoundField DataField="IdGroup" HeaderText="Id" SortExpression="IdGroup" />--%>
+            <asp:BoundField DataField="RowNumb" HeaderText="№" SortExpression="RowNumb" />
             <asp:CommandField HeaderText="Удалить" ShowDeleteButton="True" ShowHeader="True" />
             <asp:CommandField HeaderText="Редактировать" ShowEditButton="True" ShowHeader="True" />
-            <asp:BoundField DataField="IdDirection" HeaderText="Id направления" SortExpression="IdDirection" />
+            <asp:BoundField DataField="CodeDirection" HeaderText="Код направления" SortExpression="CodeDirection" />
             <asp:BoundField DataField="Course" HeaderText="Курс" SortExpression="Course" />
             <asp:BoundField DataField="CodeGroup" HeaderText="Код группы " SortExpression="CodeGroup" />
         </Columns>

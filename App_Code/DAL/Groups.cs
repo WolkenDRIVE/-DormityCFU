@@ -13,6 +13,7 @@ namespace DormityCFU.App_Code.DAL
         public int Course { get; set; }
         public string CodeGroup { get; set; }
         public int IdDirection { get; set; }
+        public string CodeDirection { get; set; }
         public Groups()
         {
             RowNumb = 0;
@@ -20,6 +21,7 @@ namespace DormityCFU.App_Code.DAL
             Course = 0;
             CodeGroup = string.Empty;
             IdDirection = 0;
+            CodeDirection = string.Empty;
         }
         public static Groups Map(DataRow dataRow)
         {
@@ -27,6 +29,7 @@ namespace DormityCFU.App_Code.DAL
             result.IdGroup = (int)dataRow["IdGroup"];
             result.Course = (int)dataRow["Course"];
             result.CodeGroup = dataRow["CodeGroup"].ToString();
+            result.CodeDirection = dataRow["CodeDirection"].ToString();
             result.IdDirection = (int)dataRow["IdDirection"];
             return result;
         }

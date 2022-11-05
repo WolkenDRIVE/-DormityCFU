@@ -10,7 +10,10 @@
     <asp:GridView ID="GridViewStudent" runat="server" BackColor="LightGoldenrodYellow" OnRowDeleting="GridViewStudent_RowDeleting" OnRowDataBound="GridViewStudent_RowDataBound" OnRowEditing="GridViewStudent_RowEditing" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None">
         <AlternatingRowStyle BackColor="PaleGoldenrod" />
         <Columns>
-            <asp:BoundField DataField="IdStudent" HeaderText="Id" SortExpression="IdStudent" />
+            <asp:BoundField DataField="IdStudent" ><ControlStyle CssClass="hiddenColumn" /><FooterStyle CssClass="hiddenColumn" /><HeaderStyle CssClass="hiddenColumn" /><ItemStyle CssClass="hiddenColumn" /></asp:BoundField>
+
+            <%--<asp:BoundField DataField="IdStudent" HeaderText="Id" SortExpression="IdStudent" />--%>
+            <asp:BoundField DataField="RowNumb" HeaderText="№" SortExpression="RowNumb" />
             <asp:CommandField HeaderText="Удалить" ShowDeleteButton="True" ShowHeader="True" />
             <asp:CommandField HeaderText="Редактировать" ShowEditButton="True" ShowHeader="True" />
             <asp:BoundField DataField="SecondName" HeaderText="Фамилия Студента " SortExpression="SecondName" />

@@ -5,9 +5,9 @@
     <asp:Label ID="LabelMessage" runat="server" Text="Label"></asp:Label>
     <table>
     <tr>
-        <td style="color: #F1F1F2">Id направления</td>
+        <td style="color: #F1F1F2">Код направления</td>
         <td>
-            <asp:TextBox ID="TextBoxIdDirection" runat="server"></asp:TextBox>
+           <asp:DropDownList ID="DropDownListDirection" runat="server"></asp:DropDownList>
         </td>
     </tr>      
         <tr>

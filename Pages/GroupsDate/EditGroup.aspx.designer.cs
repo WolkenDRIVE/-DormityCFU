@@ -24,13 +24,13 @@ namespace DormityCFU.Pages.GroupsDate
         protected global::System.Web.UI.WebControls.Label LabelMessage;
 
         /// <summary>
-        /// TextBoxIdDirection control.
+        /// DropDownListDirection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxIdDirection;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListDirection;
 
         /// <summary>
         /// TextBoxCourse control.

@@ -121,24 +121,19 @@ namespace DormityCFU.App_Code.DAL
                 conn.Open();
                 try
                 {
-                    cmd.CommandText = "UPDATE [Student] SET [SecondName]=?, [FirstName]=?, [Surname]=?, [DateOfRegistr]=?, [DateOfBirth]=?, [Direction]=?, [Course]=?, [IdDormitory]=?, [NumbRoom]=? WHERE [IdStudent]=?";
+                    cmd.CommandText = "UPDATE [Student] SET [SecondName]=?, [FirstName]=?, [Surname]=?, [DateOfRegistr]=?, [DateOfBirth]=?, [IdGroup]=?, [IdRoom]=? WHERE [IdStudent]=?";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("[SecondName]", entity.SecondName);
                     cmd.Parameters.AddWithValue("[FirstName]", entity.FirstName);
                     cmd.Parameters.AddWithValue("[Surname]", entity.Surname);
                     cmd.Parameters.AddWithValue("[DateOfRegistr]", entity.DateOfRegistr);
                     cmd.Parameters.AddWithValue("[DateOfBirth]", entity.DateOfBirth);
-                    cmd.Parameters.AddWithValue("[Direction]", entity.Direction);
-                    cmd.Parameters.AddWithValue("[Course]", entity.Course);
-                    cmd.Parameters.AddWithValue("[IdDormitory]", entity.IdDormitory);
-                    cmd.Parameters.AddWithValue("[NumbRoom]", entity.NumbRoom);
+                    cmd.Parameters.AddWithValue("[IdGroup]", entity.IdGroup);
+                    cmd.Parameters.AddWithValue("[IdRoom]", entity.IdRoom);
                     cmd.Parameters.AddWithValue("[IdStudent]", entity.IdStudent);
                     cmd.ExecuteNonQuery();
                 }
-                catch
-                {
-                    throw;
-                }
+                
                 finally
                 {
                     conn.Close();
@@ -153,18 +148,15 @@ namespace DormityCFU.App_Code.DAL
                 conn.Open();
                 try
                 {
-                    cmd.CommandText = "INSERT INTO [Student] ([SecondName], [FirstName], [Surname], [DateOfRegistr], [DateOfBirth], [Direction], [IdGroup], [Course], [IdDormitory], [NumbRoom])" + "VALUES (?,?,?,?,?,?,?,?,?,?)";
+                    cmd.CommandText = "INSERT INTO [Student] ([SecondName], [FirstName], [Surname], [DateOfRegistr], [DateOfBirth], [IdGroup], [IdRoom])" + "VALUES (?,?,?,?,?,?,?)";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("[SecondName]", entity.SecondName);
                     cmd.Parameters.AddWithValue("[FirstName]", entity.FirstName);
                     cmd.Parameters.AddWithValue("[Surname]", entity.Surname);
                     cmd.Parameters.AddWithValue("[DateOfRegistr]", entity.DateOfRegistr);
                     cmd.Parameters.AddWithValue("[DateOfBirth]", entity.DateOfBirth);
-                    cmd.Parameters.AddWithValue("[Direction]", entity.Direction);
                     cmd.Parameters.AddWithValue("[IdGroup]", entity.IdGroup);
-                    cmd.Parameters.AddWithValue("[Course]", entity.Course);
-                    cmd.Parameters.AddWithValue("[IdDormitory]", entity.IdDormitory);
-                    cmd.Parameters.AddWithValue("[NumbRoom]", entity.NumbRoom);
+                    cmd.Parameters.AddWithValue("[IdRoom]", entity.IdRoom);
                     cmd.ExecuteNonQuery();
                     cmd.CommandText = "SELECT @@IDENTITY";
                     object o = cmd.ExecuteScalar();
@@ -227,7 +219,7 @@ namespace DormityCFU.App_Code.DAL
                 Conn.Open();
                 try
                 {
-                    cmd.CommandText = "SELECT Room.* FROM Room";
+                    cmd.CommandText = "SELECT Room.*, Dormitory.NameDormitory FROM Dormitory INNER JOIN Room ON Dormitory.IdDormitory = Room.IdDormitory";
                     dataAdapter = new OdbcDataAdapter(cmd);
                     dataAdapter.Fill(dataTable);
                     dataAdapter.Dispose();
@@ -375,7 +367,7 @@ namespace DormityCFU.App_Code.DAL
                 Conn.Open();
                 try
                 {
-                    cmd.CommandText = "SELECT Groups.* FROM Groups";
+                    cmd.CommandText = "SELECT Groups.*, Directions.CodeDirection FROM Directions INNER JOIN Groups ON Directions.IdDirection = Groups.IdDirection";
                     dataAdapter = new OdbcDataAdapter(cmd);
                     dataAdapter.Fill(dataTable);
                     dataAdapter.Dispose();
@@ -426,7 +418,7 @@ namespace DormityCFU.App_Code.DAL
                 conn.Open();
                 try
                 {
-                    cmd.CommandText = "UPDATE [Groups] SET [IdDirection]=?, [Course]=?, [CodeGroup]=?, [MaxNumberOfResidents]=?, [NumbRoom]=?, WHERE [IdGroup]=?";
+                    cmd.CommandText = "UPDATE [Groups] SET [IdDirection]=?, [Course]=?, [CodeGroup]=? WHERE [IdGroup]=?";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("[IdDirection]", entity.IdDirection);
                     cmd.Parameters.AddWithValue("[Course]", entity.Course);
@@ -519,7 +511,7 @@ namespace DormityCFU.App_Code.DAL
                 Conn.Open();
                 try
                 {
-                    cmd.CommandText = "SELECT Dormitory.* FROM Dormitory";
+                    cmd.CommandText = "SELECT [Dormitory].[IdDormitory], [Dormitory].[NameDormitory], [Dormitory].[PhoneNumbD], [Dormitory].[Adress], [Dormitory].[NumbOfRooms] FROM Dormitory";
                     dataAdapter = new OdbcDataAdapter(cmd);
                     dataAdapter.Fill(dataTable);
                     dataAdapter.Dispose();

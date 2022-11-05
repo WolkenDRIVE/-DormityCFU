@@ -24,13 +24,17 @@ namespace DormityCFU.Pages.GroupsDate
             id = int.Parse(Request.QueryString["id"]);
             if (!IsPostBack)
             {
+                DropDownListDirection.DataSource = DataAccessor.SelectDirectionsX();
+                DropDownListDirection.DataValueField = "IdDirection";
+                DropDownListDirection.DataTextField = "CodeDirection";
+                DropDownListDirection.DataBind();
                 BindControls();
             }
         }
         private void BindControls()
         {
             Groups groups = DataAccessor.SelectGroups(id);
-            TextBoxIdDirection.Text = groups.IdDirection.ToString();
+            DropDownListDirection.SelectedValue = groups.IdDirection.ToString();
             TextBoxCourse.Text = groups.Course.ToString();
             TextBoxCodeGroup.Text = groups.CodeGroup.ToString();
         }
@@ -38,7 +42,7 @@ namespace DormityCFU.Pages.GroupsDate
         {
             Groups groups = new Groups();
             groups.IdGroup = id;
-            groups.IdDirection = int.Parse(TextBoxIdDirection.Text);
+            groups.IdDirection = int.Parse(DropDownListDirection.SelectedValue);
             groups.Course = int.Parse(TextBoxCourse.Text);
             groups.CodeGroup = TextBoxCodeGroup.Text;
             DataAccessor.UpdateGroups(groups);

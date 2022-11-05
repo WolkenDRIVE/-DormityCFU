@@ -60,22 +60,13 @@ namespace DormityCFU.Pages.Students
         protected global::System.Web.UI.WebControls.TextBox TextBoxDateOfBirth;
 
         /// <summary>
-        /// DropDownListDirection control.
+        /// DropDownListCourse control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListDirection;
-
-        /// <summary>
-        /// TextBoxCourse control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxCourse;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListCourse;
 
         /// <summary>
         /// TextBoxDateOfRegistr control.
@@ -96,13 +87,13 @@ namespace DormityCFU.Pages.Students
         protected global::System.Web.UI.WebControls.DropDownList DropDownListIdDormitory;
 
         /// <summary>
-        /// TextBoxNumbRoom control.
+        /// DropDownListRoom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxNumbRoom;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListRoom;
 
         /// <summary>
         /// HyperLinkCancel control.

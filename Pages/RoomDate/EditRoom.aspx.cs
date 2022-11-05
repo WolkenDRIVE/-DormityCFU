@@ -24,13 +24,9 @@ namespace DormityCFU.Pages.RoomDate
             id = int.Parse(Request.QueryString["id"]);
             if (!IsPostBack)
             {
-                //DropDownListRoomStatusNotation.DataSource = DataAccessor.SelectDirectionsX();
-                //DropDownListRoomStatusNotation.DataValueField = "IdRoom";
-                //DropDownListRoomStatusNotation.DataTextField = "RoomStatusNotation";
                 DropDownListIdDormitory.DataSource = DataAccessor.SelectDormitoryX();
                 DropDownListIdDormitory.DataValueField = "IdDormitory";
-                DropDownListIdDormitory.DataTextField = "IdDormitory";
-                //DropDownListRoomStatusNotation.DataBind();
+                DropDownListIdDormitory.DataTextField = "NameDormitory";
                 DropDownListIdDormitory.DataBind();
                 BindControls();
             }

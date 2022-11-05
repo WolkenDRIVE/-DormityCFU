@@ -14,16 +14,19 @@ namespace DormityCFU.Pages.GroupsDate
         {
             if (!IsPostBack)
             {
-               
+                DropDownListDirection.DataSource = DataAccessor.SelectDirectionsX();
+                DropDownListDirection.DataValueField = "IdDirection";
+                DropDownListDirection.DataTextField = "CodeDirection";
+                DropDownListDirection.DataBind();
             }
         }
         protected void ButtonSave_Click(object sender, EventArgs e)
         {
             Groups groups = new Groups();
-            groups.IdDirection = int.Parse(TextBoxIdDirection.Text);
+            groups.IdDirection = int.Parse(DropDownListDirection.SelectedValue);
             groups.Course = int.Parse(TextBoxCourse.Text);
             groups.CodeGroup = TextBoxCodeGroup.Text;
-            DataAccessor.UpdateGroups(groups);
+            DataAccessor.InsertGroups(groups);
             Response.Redirect("~/Pages/GroupsDate/ListGroup.aspx");
         }
     }

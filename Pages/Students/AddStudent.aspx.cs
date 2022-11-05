@@ -14,13 +14,17 @@ namespace DormityCFU.Pages.Students
         {
             if (!IsPostBack)
             {
-                DropDownListDirection.DataSource = DataAccessor.SelectDirectionsX();
-                DropDownListDirection.DataValueField = "IdDirection";
-                DropDownListDirection.DataTextField = "Direction";
+                DropDownListCourse.DataSource = DataAccessor.SelectGroupsX();
+                DropDownListCourse.DataValueField = "IdGroup";
+                DropDownListCourse.DataTextField = "Course";
+                DropDownListCourse.DataBind();
+                DropDownListRoom.DataSource = DataAccessor.SelectRoomX();
+                DropDownListRoom.DataValueField = "IdRoom";
+                DropDownListRoom.DataTextField = "NumbRoom";
+                DropDownListRoom.DataBind();
                 DropDownListIdDormitory.DataSource = DataAccessor.SelectDormitoryX();
                 DropDownListIdDormitory.DataValueField = "IdDormitory";
                 DropDownListIdDormitory.DataTextField = "IdDormitory";
-                DropDownListDirection.DataBind();
                 DropDownListIdDormitory.DataBind();
             }
         }
@@ -31,11 +35,10 @@ namespace DormityCFU.Pages.Students
             student.SecondName = TextBoxSecondName.Text;
             student.FirstName = TextBoxFirstName.Text;
             student.Surname = TextBoxSurname.Text;
-            student.IdDirection = int.Parse(DropDownListDirection.SelectedValue);
             student.DateOfBirth = DateTime.Parse(TextBoxDateOfBirth.Text);
-            student.Course = int.Parse(TextBoxCourse.Text);
+            student.IdGroup = int.Parse(DropDownListCourse.SelectedValue);
             student.DateOfRegistr = DateTime.Parse(TextBoxDateOfRegistr.Text);
-            student.NumbRoom = int.Parse(TextBoxNumbRoom.Text);
+            student.IdRoom = int.Parse(DropDownListRoom.SelectedValue);
             DataAccessor.InsertStudent(student);
             Response.Redirect("~/Pages/Students/ListStudent.aspx");
         }

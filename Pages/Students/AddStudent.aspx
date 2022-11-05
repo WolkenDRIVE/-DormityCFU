@@ -27,16 +27,11 @@
             <asp:TextBox ID="TextBoxDateOfBirth" runat="server"></asp:TextBox>
         </td>
     </tr>
-    <tr>
-        <td style="color: #F1F1F2">Направление</td>
-        <td>
-            <asp:DropDownList ID="DropDownListDirection" runat="server"></asp:DropDownList>
-        </td>
-    </tr>
+    
         <tr>
         <td style="color: #F1F1F2">Курс</td>
         <td>
-            <asp:TextBox ID="TextBoxCourse" runat="server"></asp:TextBox>
+            <asp:DropDownList ID="DropDownListCourse" runat="server"></asp:DropDownList>
         </td>
     </tr>
         <tr>
@@ -54,7 +49,7 @@
     <tr>
         <td style="color: #F1F1F2">Номер комнаты</td>
         <td>
-            <asp:TextBox ID="TextBoxNumbRoom" runat="server"></asp:TextBox>
+            <asp:DropDownList ID="DropDownListRoom" runat="server"></asp:DropDownList>
         </td>
     </tr>
     </table>

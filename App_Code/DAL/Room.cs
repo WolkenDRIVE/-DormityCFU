@@ -15,6 +15,7 @@ namespace DormityCFU.App_Code.DAL
         public int NumberOfResidents { get; set; }
         public int MaxNumberOfResidents { get; set; }
         public int NumbRoom { get; set; }
+        public string NameDormitory { get; set; }
         public Room()
         {
             RowNumb = 0;
@@ -24,6 +25,7 @@ namespace DormityCFU.App_Code.DAL
             NumberOfResidents = 0;
             MaxNumberOfResidents = 0;
             NumbRoom = 0;
+            NameDormitory = string.Empty;
         }
         public static Room Map(DataRow dataRow)
         {
@@ -34,6 +36,7 @@ namespace DormityCFU.App_Code.DAL
             result.NumberOfResidents = (int)dataRow["NumberOfResidents"];
             result.MaxNumberOfResidents = (int)dataRow["MaxNumberOfResidents"];
             result.NumbRoom = (int)dataRow["NumbRoom"];
+            //result.NameDormitory = dataRow["NameDormitory"].ToString();
             return result;
         }
 

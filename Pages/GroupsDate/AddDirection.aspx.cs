@@ -22,7 +22,7 @@ namespace DormityCFU.Pages.GroupsDate
             Directions directions = new Directions();
             directions.Direction = TextBoxDirection.Text;
             directions.CodeDirection = TextBoxCodeDirection.Text;
-            DataAccessor.UpdateDirections(directions);
+            DataAccessor.InsertDirections(directions);
             Response.Redirect("~/Pages/GroupsDate/ListGroup.aspx");
         }
     }

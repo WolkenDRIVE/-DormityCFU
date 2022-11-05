@@ -12,7 +12,6 @@ namespace DormityCFU.App_Code.DAL
         public int IdStudent { get; set; }
         public int IdGroup { get; set; }
         public int IdRoom { get; set; }
-        public int IdDirection { get; set; }
         public string SecondName { get; set; }
         public string FirstName { get; set; }
         public string Surname { get; set; }
@@ -43,7 +42,6 @@ namespace DormityCFU.App_Code.DAL
             Direction = string.Empty;
             IdDormitory = 0;
             Course = 0;
-            IdDirection = 0;
         }
         public static Student Map(DataRow dataRow)
         {
@@ -63,7 +61,6 @@ namespace DormityCFU.App_Code.DAL
             result.IdDormitory = (int)dataRow["IdDormitory"];
             result.Direction = dataRow["Direction"].ToString();
             result.NumbRoom = (int)dataRow["NumbRoom"];
-            //result.IdDirection = (int)dataRow["IdDirection"];
             return result;
         }
 

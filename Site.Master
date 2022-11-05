@@ -14,6 +14,7 @@
     </asp:PlaceHolder>
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:bundlereference runat="server" path="~/Content/Site.css?=v1.0" />
     <link href="~/Images/logotip.png" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -56,6 +57,19 @@
                         <li><a runat="server" href="~/Pages/Students/ListStudent.aspx">Студенты</a></li>
                         <li><a runat="server" href="~/Pages/RoomDate/ListRoom.aspx">Комнаты</a></li>
                         <li><a runat="server" href="~/Pages/GroupsDate/ListGroup.aspx">Направления и группы</a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a runat="server" href="~/Pages/Registration/Login.aspx">Войти</a></li>
                     </ul>
                 </div>
             </div>
